@@ -1,0 +1,33 @@
+{
+  "name": "fsd_jobify_portal",
+  "version": "1.0.0",
+  "description": "This is a job portal application that is built using React for the frontend and Node.js with Express for the backend. The application allows users to browse job listings, apply for jobs, and manage their profile.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/durgadevivk/FSD_Jobify_Portal.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "dotenv",
+    "jsonwebtoken",
+    "mongoose",
+    "restfulapi"
+  ],
+  "author": "Durgadevi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/durgadevivk/FSD_Jobify_Portal/issues"
+  },
+  "homepage": "https://github.com/durgadevivk/FSD_Jobify_Portal#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongoose": "^9.9.4"
+  }
+}
