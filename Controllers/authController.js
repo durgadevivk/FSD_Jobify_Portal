@@ -70,7 +70,13 @@ const authController={
     //get the profile of
     me:async (req,res)=>{
         try{
-            return res.status(200).json({message:'get profile'});
+            //get the user id from the request object
+            const userId=req.userId;
+            //find the user in the database using the user id(make sure to exclude the password field from the response)
+            const user=await User.findById(userId).select('-password -__v');
+            //send the user object as the response
+            return res.status(200).json({user});
+           // return res.status(200).json({message:'get profile'});
         }catch(e) {
             return res.status(500).json({error:e.message});
         }  
@@ -78,7 +84,15 @@ const authController={
     //logout
     logout:async (req,res)=>{
         try{
-            return res.status(200).json({message:'logout user'});
+           //clear the cookie with the token
+           res.clearCookie('token',{
+            httpOnly:true,
+            secure:ENV==='production',//set secure flag only in production
+            sameSite:ENV==='production'?'none':'lax',//set sameSite flag to none in production
+           })
+           return res.status(200).json({message:'user logged out successfully'});
+          //
+            // return res.status(200).json({message:'logout user'});
         }catch(e) {
             return res.status(500).json({error:e.message});
         }  

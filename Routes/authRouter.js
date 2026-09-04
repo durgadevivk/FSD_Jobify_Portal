@@ -1,3 +1,4 @@
+const { isAuthenticated }=require('../middlewares/auth.js');
 //import express
 const express=require('express');
 const {register,login,me,logout}=require('../Controllers/authController.js');
@@ -8,8 +9,8 @@ const authRouter=express.Router();
 authRouter.post('/register',register);
 authRouter.post('/login',login);
 //protected routes
-authRouter.get('/me',me);
-authRouter.post('/logout',logout);
+authRouter.get('/me',isAuthenticated,me);
+authRouter.post('/logout',isAuthenticated,logout);
 
 
 //export router
