@@ -28,3 +28,17 @@ This is a job portal application that is built using React for the frontend and 
 * Manage companies (Create, Update, View, Delete)
 * Manage recruiters (Create, Update, View, Delete)
 * Assign recruiters to companies
+
+#Company features
+sample Company.
+```json
+    {
+        "name":"Tech solutions Inc",
+        "desccription":"A leading tech solution provider in s/w development ",
+        "industry":"IT",
+        "location":"San Fransisco,CA",
+        "website":"https://www.techsolutions.com",
+        "size":"201-500",
+        "foundedYear":2010
+    }
+```
