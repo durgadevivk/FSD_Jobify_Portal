@@ -43,7 +43,7 @@ const allowRoles=(roles)=>{
             return res.status(403).json({message:'Forbiden:you do not have required role to access this resource'});
         }
         //add the user object to the request object for further use in the next middleware or router handler
-        request.user
+        req.user=user;
         //if yes call the next middleware or router handler
         next();
     }

@@ -1,4 +1,4 @@
-const { isAuthenticated }=require('../middlewares/auth.js');
+const { isAuthenticated, allowRoles }=require('../middlewares/auth.js');
 //import express
 const express=require('express');
 const {register,login,me,logout}=require('../Controllers/authController.js');
